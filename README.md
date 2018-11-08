@@ -36,3 +36,154 @@ The code below would **clean the review text from html tags and punctuations and
 4. The preprocessing step is one time effort but the training & visualization steps require multiple runs. Hence, it is prudent to make reprocessing step independant, to avoid multiple runs.
 
 # K-Means-Hierarchical-DBScan-Clustering-Analysis (Part II) #
+
+## Data Source: ##
+
+**The preprocessing step has produced final.sqlite file after doing the data preparation & cleaning.** The review text is now devoid of punctuations, HTML markups and stop words.
+
+## Objective: ##
+
+To find meaningful clusters using **unsupervised clustering algorithms like K-Means, Hierarchical & DBScan** on the review dataset. The **polarity of the review is removed from the input dataset**, so that the clustering would happen just on the review text given.
+
+4 standard featurizations are used, namely **BoW, tf-idf, W2V and tf-idf weighted W2V featurizations**. Cross validaton or test metrics in supervised algorithm cannot be used as there is no test data. Instead, **random samples from clusters formed are analyzed manually and a conclusion should be arrived at**.
+
+## At a glance: ##
+
+The **elbow method is used to find the right # of clusters of K-Means. The minPoints for DBScan is set as double the number of dimension of W2V vectors**, as a rule of thumb. The **Eps value is calculated using KNN distance plots**. The point at which the slope of the plot is higher than a set threshold is taken as Eps value.
+
+The hierarchical clustering algorithm is run with different ‘k’ values & DBScan also is executed with different Eps values. so that the impact of change in hyperparameters can be well understood.
+
+## Custom Defined Functions ##
+
+**3 user defined functions are written to**
+
+**a) Compute Mean Neighbourhood Distance & Distance Plot**
+
+**b) Elbow Method to find K**
+
+**c) Analyze the Clusters function.**
+
+## K-Means & Hierarchical Clustering on BoW ##
+
+BoW will result in a **sparse matrix with huge number of features** as it creates a feature for each unique word in the review.
+
+For Binary BoW feature representation, CountVectorizer is declared as float, as the values can take non-integer values on further processing.
+
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/8.1.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/8.2.PNG">
+</p>
+<p align="center">
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/8.3.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/8.4.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/8.5.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/8.6.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/8.7.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/8.8.PNG">
+</p>
+
+## K-Means & Hierarchical Clustering on tf-IDF ##
+
+**Sparse matrix generated from tf-IDF** is fed in to GridSearch GBDT Cross Validator & RF Cross Validator to find the optimal depth value. Performance metrics of optimal GBDT with tf-idf featurization is found.
+
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/9.1.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/9.2.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/9.3.PNG">
+</p>
+<p align="center">
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/9.4.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/9.5.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/9.6.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/9.7.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/9.8.PNG">
+</p>
+
+## K-Means, Hierarchical Clustering & DBScan on Word2Vec ##
+
+**Dense matrix generated from Word2Vec** is fed in to GridSearch GBDT Cross Validator & RF Cross Validator to find the optimal depth value. Performance metrics of GBDT and RF with W2V featurization is found.
+
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.1.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.2.PNG">
+</p>
+<p align="center">
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.3.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.4.PNG">
+</p>
+<p align="center">
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.5.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.6.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.7.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.8.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.9.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.10.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.11.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.12.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.13.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.14.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.15.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.16.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.17.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.18.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.19.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.20.PNG">
+</p>
