@@ -280,7 +280,7 @@ For Binary BoW feature representation, CountVectorizer is declared as float, as 
            distributed.
         
         Cluster 0: Reviews are going in-depth about using the purchased product for cooking. Eg: noodies, oil, 
-                    chicken, ice cream, etc.
+                    chicken, ice cream, melons etc.
         Cluster 1: There are some negative words (reviews) repeated, in this group. Some breakfast products are 
                     clubbed in this group. Eg: cornflakes, peanut butter etc.
         Cluster 2: This group is all about drinks. Eg: coffee, chai, latte, cups, drink, chocolate etc are repeated.
@@ -288,8 +288,8 @@ For Binary BoW feature representation, CountVectorizer is declared as float, as 
                     the market, but only in Amazon. Logically, as customers were able to find such ‘hard-gets’, 
                     they are extremely happy.
         Cluster 4: This group focus on delivery and damage caused for the shipment. 
-        Cluster 5: Most of the reviews are about bakery food items. Product reviews are about chocolate syrup, scones, 
-                    shortbread, ice cream, carbonated drinks and fruit juice etc.
+        Cluster 5: Most of the reviews are about bakery food items. Product reviews are about chocolate syrup, 
+                    scones, shortbread, ice cream, carbonated drinks and fruit juice etc.
         Cluster 6: Groups products available in amazon, vis-a-vis offline stores.
         Cluster 7: This group is all about tea and tea products.
         Cluster 8: This group is all about pets, mostly dog and cats.
