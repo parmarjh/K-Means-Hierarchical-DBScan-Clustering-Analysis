@@ -1,5 +1,6 @@
 # K-Means-Hierarchical-DBScan-Clustering-Analysis #
-Hyperparameter Tuning of K-Means using Elbow Method, Eps values based on MinPoints for DBScan and Hierarchical Clustering based on various values of 'k' is done to form different clusters, on which an analysis is done for semantic coherence. 
+
+Hyperparameter Tuning of K in K-Means using Elbow Method, Eps values in DBScan based on MinPoints and # of clusters, k in Hierarchical Clustering. The clusters thus formed are analyzed for semantic coherence. 
 
 ## Amazon Fine Food Review Dataset ##
 
@@ -247,15 +248,15 @@ For Binary BoW feature representation, CountVectorizer is declared as float, as 
 
     **1. BoW**
     
-        K-Means:
+    K-Means:
         
-        Cluster 0: most reviews about taste of food derived from flavour.
-        Cluster 1: reviews focussed on ‘work’ environment products. Eg: office, work, colleagues, receptionist etc are repeated.
-        Cluster 2: groups reviews related to food. The repeated words are food, sugar, flours, oil etc.
+    Cluster 0: most reviews about taste of food derived from flavour.
+    Cluster 1: reviews focussed on ‘work’ environment products. Eg: office, work, colleagues, receptionist etc are repeated.
+    Cluster 2: groups reviews related to food. The repeated words are food, sugar, flours, oil etc.
         
-        Hierarchical:
+    Hierarchical:
         
-        The clustering is not meaningful as all points except 1, is grouped into 1 single cluster.
+    The clustering is not meaningful as all points except 1, is grouped into 1 single cluster.
         
     **2. tf-idf**
     
