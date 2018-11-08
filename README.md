@@ -248,15 +248,15 @@ For Binary BoW feature representation, CountVectorizer is declared as float, as 
 
     **1. BoW**
     
-    K-Means:
+        K-Means:
         
-    Cluster 0: most reviews about taste of food derived from flavour.
-    Cluster 1: reviews focussed on ‘work’ environment products. Eg: office, work, colleagues, receptionist etc are repeated.
-    Cluster 2: groups reviews related to food. The repeated words are food, sugar, flours, oil etc.
+        Cluster 0: most reviews about taste of food derived from flavour. <br/>
+        Cluster 1: reviews focussed on ‘work’ environment products. Eg: office, work, colleagues, receptionist etc are repeated. <br/>
+        Cluster 2: groups reviews related to food. The repeated words are food, sugar, flours, oil etc. <br/>
         
-    Hierarchical:
+            Hierarchical:
         
-    The clustering is not meaningful as all points except 1, is grouped into 1 single cluster.
+            The clustering is not meaningful as all points except 1, is grouped into 1 single cluster.
         
     **2. tf-idf**
     
