@@ -187,3 +187,139 @@ For Binary BoW feature representation, CountVectorizer is declared as float, as 
 <p>
     <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/10.20.PNG">
 </p>
+
+## K-Means, Hierarchical Clustering & DBScan on TF-ID Weighted W2V ##
+
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.1.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.2.PNG">
+</p>
+<p align="center">
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.3.PNG">
+</p>
+<p align="center">
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.4.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.5.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.6.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.7.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.8.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.9.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.10.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.11.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.12.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.13.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.14.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.15.PNG">
+</p>
+<p>
+    <img src="https://github.com/AdroitAnandAI/K-Means-Hierarchical-DBScan-Clustering-Analysis/blob/master/images/11.16.PNG">
+</p>
+
+## Observations ##
+
+1. **All the clusters are formed based on word (or contextual similarities) and NOT on +ve or -ve review rating as they are not given ‘y’ values as input, while clustering**.
+
+2. The analysis of clusters formed using 4 featurizations are done.
+
+    **1. BoW**
+    
+        K-Means:
+        
+        Cluster 0: most reviews about taste of food derived from flavour.
+        Cluster 1: reviews focussed on ‘work’ environment products. Eg: office, work, colleagues, receptionist etc are repeated.
+        Cluster 2: groups reviews related to food. The repeated words are food, sugar, flours, oil etc.
+        
+        Hierarchical:
+        
+        The clustering is not meaningful as all points except 1, is grouped into 1 single cluster.
+        
+    **2. tf-idf**
+    
+        K-Means:
+        
+        Cluster 0: customers are in dilemma. Whether the effectiveness is +ve or -ve or just placebo.
+        Cluster 1: talks about illness and effectiveness of medicines. Many medical terminologies.
+        Cluster 2: all reviews are about sound and equipments related to sound. Eg: mic, icicle, jack etc.
+        Cluster 3: groups reviews related to food. The repeated words are food, sugar, flours, oil etc.
+        
+        Hierarchical:
+        
+        The clustering is not meaningful as all points except 1, is grouped into 1 single cluster.
+        
+    **3. Word2Vec:**
+    
+        K-Means:
+        
+        From the cluster groups, it can be seen that the **reviews obtained from kmeans clustering are more distributed**.
+        
+        Cluster 0: Reviews are going in-depth about using the purchased product for cooking. Eg: noodies, oil, chicken, ice cream, etc.
+        Cluster 1: There are some negative words (reviews) repeated, in this group. Some breakfast products are clubbed in this group.                  Eg: cornflakes, peanut butter etc.
+        Cluster 2: This group is all about drinks. Eg: coffee, chai, latte, cups, drink, chocolate etc are repeated.
+        Cluster 3: Extremely positive reviews. Most of the reviews are about products which are rarely available in the market, but only                in Amazon. Logically, as customers were able to find such ‘hard-gets’, they are extremely happy.
+        Cluster 4: This group focus on delivery and damage caused for the shipment. 
+        Cluster 5: Most of the reviews are about bakery food items. Product reviews are about chocolate syrup, scones, shortbread, ice                  cream, carbonated drinks and fruit juice etc.
+        Cluster 6: Groups products available in amazon, vis-a-vis offline stores.
+        Cluster 7: This group is all about tea and tea products.
+        Cluster 8: This group is all about pets, mostly dog and cats.
+        Cluster 9: Group focus on energy drinks and health drinks.
+        Cluster 10: Groups reviews about Bread and associated combinations.
+        Cluster 11: Very personal opinion about the products are shared.
+        Cluster 12: This group is all about dog food and cat food.
+        Cluster 13: Groups reviews about healthy related products and meal replacements. Eg: protein bars, energy bars, pirate booty,
+                healthy cereal etc.
+        Clusters 14: Snacks & toffees are grouped. Eg: rice chips, toffee, pepper, berger, chocolate etc.
+        
+        Hierarchical:
+        
+        The first 2 clusters formed when K=2 & K=5 are similar.
+        
+        Cluster 0: Groups reviews about snacks and sauces.
+        Cluster 1: Groups cuisines of different cultures.
+        Cluster 2: Groups tea and coffee reviews.
+        Cluster 3: Nothing found in common.
+        Clsuter 4: Groups dog and cat foods.
+        
+        DBSCAN:
+        
+        The Eps value is found out using Min Points value. 2 Clusters are formed while using the computed Eps value. One cluster has id         of -1, which means they are identified as noise. When Eps value is reduced all the points are identified as noise, whereas, when         the Eps value is increased, then number of noise points drastically reduced.
+        
+    **4. tf-idf W2V:**
+    
+        K-Means:
+        
+        The 15 clusters formed via tf-idf weighted W2V vectors have similar grouping pattern compared to W2V vectors. The cluster   
+        separation may be slightly more meaningful than using W2V alone, but they are not significantly better.
+        
+        Hierarchical:
+        
+        The 5 clusters formed are similar to the groups obtained from W2V method, but they are more meaningfully separated. For                 instance, Cluster 3 talks only about dogs and dog foods, whil Cluster 4 contains reviews about different variants of tea, such           as black tea, green tea etc.
+        
+        DBSCAN:
+        
+        The DBSCAN results shows similar results as with W2V vector. When Eps value is reduced all the points are identified as noise,           whereas, when the Eps value is increased, noise points are reduced.
+        
+ 3. From the above analysis, it can deduced that **K-Means algorithm on TF-IDWeighted W2V orWord2Vec is the clustering algorithm of choice**.
