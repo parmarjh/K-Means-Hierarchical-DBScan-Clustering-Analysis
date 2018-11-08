@@ -250,7 +250,7 @@ For Binary BoW feature representation, CountVectorizer is declared as float, as 
     
         K-Means:
         
-        Cluster 0: most reviews about taste of food derived from flavour. 
+        <html><b>Cluster 0:</b></html> most reviews about taste of food derived from flavour. 
         Cluster 1: reviews focussed on ‘work’ environment products. Eg: office, work, colleagues, receptionist etc 
                     are repeated. 
         Cluster 2: groups reviews related to food. The repeated words are food, sugar, flours, oil etc. 
